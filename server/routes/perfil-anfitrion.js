@@ -22,7 +22,7 @@ app.get('/perfil-anfitrion', cors(), verificaToken, function(req, res) {
     PerfilAnfitrion.find({ estado: true }, 'nombre rut email estado')
         .skip(desde)
         // .limit(limite)
-        .populate('postulaciones')
+        // .populate('postulaciones')
         .exec((err, perfilesAnfitriones) => {
             if (err) {
                 return res.status(400).json({

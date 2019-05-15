@@ -39,4 +39,4 @@ perfilHuespedSchema.methods.toJSON = function() {
 
 perfilHuespedSchema.plugin(uniqueValidator, { message: '{PATH} debe de ser único' });
 
-module.exports = mongoose.model('PerfilUsuario', perfilHuespedSchema);
+module.exports = mongoose.model('PerfilHuesped', perfilHuespedSchema);

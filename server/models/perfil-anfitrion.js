@@ -4,7 +4,7 @@ const uniqueValidator = require('mongoose-unique-validator');
 
 let Schema = mongoose.Schema;
 
-let perfilHuespedSchema = new Schema({
+let perfilAnfitrionSchema = new Schema({
     nombre: {
         type: String,
         required: [true, 'El nombre es requerido']
@@ -30,13 +30,13 @@ let perfilHuespedSchema = new Schema({
 });
 
 // remover un campo del objeto que no se desee retornar.
-perfilHuespedSchema.methods.toJSON = function() {
+perfilAnfitrionSchema.methods.toJSON = function() {
     let user = this;
     let userObject = user.toObject();
     delete userObject.password;
     return userObject;
 }
 
-perfilHuespedSchema.plugin(uniqueValidator, { message: '{PATH} debe de ser único' });
+perfilAnfitrionSchema.plugin(uniqueValidator, { message: '{PATH} debe de ser único' });
 
-module.exports = mongoose.model('PerfilHuesped', perfilHuespedSchema);
+module.exports = mongoose.model('PerfilAnfitrion', perfilAnfitrionSchema);
