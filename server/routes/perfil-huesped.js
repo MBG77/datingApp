@@ -97,7 +97,7 @@ app.post('/perfil-huesped', cors(), function(req, res) {
 app.options('/perfil-huesped/:id', cors());
 app.put('/perfil-huesped/:id', cors(), verificaToken, function(req, res) {
     let id = req.params.id;
-    let body = _.pick(req.body, ['nombre', 'rut', 'email', 'password']);
+    let body = _.pick(req.body, ['nombre', 'rut', 'email', 'password', 'estado']);
 
     PerfilHuesped.findByIdAndUpdate(id, body, { new: true }, (err, perfilHuespedDB) => {
         if (err) {
