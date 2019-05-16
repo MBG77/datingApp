@@ -104,7 +104,7 @@ app.put('/perfil-anfitrion/:id', cors(), verificaToken, function(req, res) {
 
     let id = req.params.id;
     // let body = req.body;
-    let body = _.pick(req.body, ['nombre', 'rut', 'email', 'password']);
+    let body = _.pick(req.body, ['nombre', 'rut', 'email', 'password', 'estado']);
 
 
     PerfilAnfitrion.findByIdAndUpdate(id, body, { new: true }, (err, perfilAnfitrionDB) => {
